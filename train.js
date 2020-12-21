@@ -6,7 +6,7 @@ class Train {
     }
 
     move(){
-        this.x -= 3;
+        this.x -= 5   ;
     }
 
     show(){
