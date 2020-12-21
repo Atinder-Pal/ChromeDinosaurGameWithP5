@@ -2,6 +2,7 @@ let unicorn;
 let unicornImage;
 let trainImage;
 let backgroundImage;
+let trains = [];
 
 function preload(){
   unicornImage = loadImage('unicorn.png');
@@ -20,7 +21,17 @@ function keyPressed(){
 }
 
 function draw() {
+  if(random(1) < 0.01){
+    trains.push(new Train());
+  }
+
+
   background(backgroundImage);
   unicorn.show();
   unicorn.move();
+
+  for(let t of trains){
+    t.move();
+    t.show();
+  }
 }
