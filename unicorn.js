@@ -1,14 +1,14 @@
 class Unicorn{
     constructor(){
-        this.r = 50;
+        this.r = 150;
         this.x = 50;
         this.y = height - 50;
         this.vy = 0; //velocity along y axis, it needs it to jump
-        this.gravity = 0.5;
+        this.gravity = 2;
     }
 
     jump(){
-        this.vy = -5;
+        this.vy = -25;
     }
 
     move(){
@@ -18,6 +18,8 @@ class Unicorn{
     }
 
     show(){
-        rect(this.x, this.y, this.r, this.r);
+        //rect(this.x, this.y, this.r, this.r);
+        // Replace rectangl ewith unicor image
+        image(unicornImage,this.x, this.y, this.r, this.r);
     }
 }
