@@ -1,6 +1,6 @@
 class Unicorn{
     constructor(){
-        this.r = 150;// r is the height of the unicorn
+        this.r = 100;// r is the height of the unicorn
         this.x = 50;
         this.y = height - 50;
         this.vy = 0; //velocity along y axis, it needs it to jump
@@ -13,6 +13,10 @@ class Unicorn{
         }        
     }
 
+    hits(anyTrain){
+        return collideRectRect(this.x, this.y, this.r,this.r, anyTrain.x, anyTrain.y, anyTrain.r,anyTrain.r);
+    }
+
     move(){
         this.y +=this.vy;
         this.vy += this.gravity;
@@ -20,8 +24,8 @@ class Unicorn{
     }
 
     show(){
-        //rect(this.x, this.y, this.r, this.r);
-        // Replace rectangl ewith unicor image
+        rect(this.x, this.y, this.r, this.r);
+        // Replace rectangle with unicor image
         image(unicornImage,this.x, this.y, this.r, this.r);
     }
 }
