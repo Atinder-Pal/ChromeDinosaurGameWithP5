@@ -9,7 +9,7 @@ function preload(){
   backgroundImage = loadImage('background.jpg');
 }
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(800, 500);
   unicorn = new Unicorn();
 }
 
