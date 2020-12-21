@@ -25,13 +25,14 @@ function draw() {
     trains.push(new Train());
   }
 
-
   background(backgroundImage);
-  unicorn.show();
-  unicorn.move();
-
   for(let t of trains){
     t.move();
     t.show();
   }
+
+  unicorn.show();
+  unicorn.move();
+
+  
 }
