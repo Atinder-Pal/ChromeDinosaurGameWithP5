@@ -1,6 +1,6 @@
 class Unicorn{
     constructor(){
-        this.r = 150;
+        this.r = 150;// r is the height of the unicorn
         this.x = 50;
         this.y = height - 50;
         this.vy = 0; //velocity along y axis, it needs it to jump
@@ -8,7 +8,9 @@ class Unicorn{
     }
 
     jump(){
-        this.vy = -25;
+        if(this.y == height - this.r){
+            this.vy = -35;
+        }        
     }
 
     move(){
