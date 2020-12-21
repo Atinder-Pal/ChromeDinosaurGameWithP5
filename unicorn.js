@@ -13,8 +13,12 @@ class Unicorn{
         }        
     }
 
-    hits(anyTrain){
-        return collideRectRect(this.x, this.y, this.r,this.r, anyTrain.x, anyTrain.y, anyTrain.r,anyTrain.r);
+    hits(train){
+        let x1 = this.x + this.r * 0.5;
+        let y1 = this.y + this.r * 0.5;
+        let x2 = train.x + train.r * 0.5;
+        let y2 = train.y + train.r * 0.5;
+        return collideCircleCircle(x1, y1, this.r, x2, y2, train.r);
     }
 
     move(){
@@ -24,8 +28,12 @@ class Unicorn{
     }
 
     show(){
-        rect(this.x, this.y, this.r, this.r);
-        // Replace rectangle with unicor image
+        //To make boundaries visible
+        //ellipseMode(CORNER);
+        //ellipse(this.x, this.y, this.r, this.r);
+
+         //rect(this.x, this.y, this.r, this.r);
+        // Replace rectangle with unicorn image
         image(unicornImage,this.x, this.y, this.r, this.r);
     }
 }
