@@ -4,6 +4,7 @@ let trainImage;
 let backgroundImage;
 let trains = [];
 let soundClassifier;
+let offsetX = 0;
 
 function preload() {
   //Citation https://learn.ml5js.org/#/reference/sound-classifier
@@ -40,7 +41,16 @@ function draw() {
     trains.push(new Train());
   }
 
-  background(backgroundImage);
+  //background(backgroundImage);
+  //==========Code for Moving Background==================
+  image(backgroundImage,offsetX, 0,width, height);
+  image(backgroundImage, offsetX + width, 0, width, height);
+  offsetX--;
+  if(offsetX <= -width){
+    offsetX = 0;
+  }
+ 		
+  //=======================================
   for (let t of trains) {
     t.move();
     t.show();
