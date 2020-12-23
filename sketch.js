@@ -43,6 +43,7 @@ function draw() {
 
   //background(backgroundImage);
   //==========Code for Moving Background==================
+  //Citation https://stackoverflow.com/questions/46411729/running-background-in-p5
   image(backgroundImage,offsetX, 0,width, height);
   image(backgroundImage, offsetX + width, 0, width, height);
   offsetX--;
